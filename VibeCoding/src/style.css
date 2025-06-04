@@ -1,0 +1,207 @@
+/* Estilos Gerais */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f7f6;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Alinha ao topo se o conteúdo for grande */
+    min-height: 100vh;
+    color: #333;
+    line-height: 1.6;
+}
+.container {
+    background-color: #fff;
+    margin: 20px;
+    padding: 25px 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 600px; /* Largura máxima da aplicação */
+}
+header {
+    text-align: center;
+    margin-bottom: 25px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 15px;
+}
+header h1 {
+    color: #2c3e50;
+    margin: 0;
+    font-size: 2em;
+}
+/* Seção de Input */
+.input-section {
+    display: flex;
+    gap: 10px; /* Espaço entre o input e o botão */
+    margin-bottom: 25px;
+}
+#taskInput {
+    flex-grow: 1; /* Ocupa o espaço disponível */
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1em;
+}
+#taskInput:focus {
+    outline: none;
+    border-color: #77aaff;
+    box-shadow: 0 0 5px rgba(119, 170, 255, 0.5);
+}
+#addTaskButton {
+    padding: 12px 20px;
+    background-color: #5cb85c;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s ease;
+}
+#addTaskButton:hover {
+    background-color: #4cae4c;
+}
+/* Seção da Lista de Tarefas */
+.task-list-section h2 {
+    color: #34495e;
+    font-size: 1.5em;
+    margin-top: 0;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+}
+#taskList {
+    list-style-type: none; /* Remove marcadores da lista */
+    padding: 0;
+    margin: 0;
+}
+.task-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 15px;
+    background-color: #f9f9f9;
+    border: 1px solid #eee;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    transition: background-color 0.3s ease;
+}
+.task-item:last-child {
+    margin-bottom: 0;
+}
+.task-item.completed .task-text {
+    text-decoration: line-through;
+    color: #95a5a6;
+}
+.task-item.completed {
+    background-color: #eaf7e9; /* Verde claro para tarefas concluídas */
+}
+.task-text {
+    flex-grow: 1;
+    cursor: default; /* Para indicar que não é diretamente clicável para edição aqui */
+}
+.task-actions button {
+    padding: 8px 12px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.9em;
+    margin-left: 8px;
+    transition: background-color 0.3s ease;
+}
+.complete-button {
+    background-color: #3498db;
+    color: white;
+}
+.complete-button:hover {
+    background-color: #2980b9;
+}
+.remove-button {
+    background-color: #e74c3c;
+    color: white;
+}
+.remove-button:hover {
+    background-color: #c0392b;
+}
+/* Rodapé */
+footer {
+    text-align: center;
+    margin-top: 30px;
+    padding-top: 15px;
+    border-top: 1px solid #eee;
+    font-size: 0.9em;
+    color: #7f8c8d;
+}
+
+/* --- NOVOS ESTILOS ADICIONADOS (MÍNIMOS PARA FUNCIONALIDADES) --- */
+
+/* Estilos para a contagem de tarefas */
+#activeTaskCount {
+    font-size: 0.8em; /* Mantém menor para não competir com o título */
+    color: #7f8c8d;
+    margin-left: 8px; /* Pequeno espaçamento */
+    font-weight: normal; /* Garante que não fique em negrito */
+}
+
+/* Container e botões de filtro */
+.filter-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 15px; /* Espaço abaixo dos botões */
+    margin-top: -5px; /* Ajusta a posição para ficar mais próximo do título */
+}
+
+.filter-button {
+    padding: 8px 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f0f0f0;
+    color: #555;
+    cursor: pointer;
+    font-size: 0.85em; /* Um pouco menor */
+    transition: all 0.2s ease;
+}
+
+.filter-button:hover {
+    background-color: #e0e0e0;
+    border-color: #aaa;
+}
+
+.filter-button.active {
+    background-color: #3498db; /* Cor azul similar ao botão "Concluir" */
+    color: white;
+    border-color: #3498db;
+    font-weight: bold; /* Destaca o filtro ativo */
+}
+
+.filter-button.active:hover {
+    background-color: #2980b9;
+    border-color: #2980b9;
+}
+
+/* Estilos para o botão de Editar */
+.edit-button {
+    background-color: #f39c12; /* Laranja discreto */
+    color: white;
+}
+
+.edit-button:hover {
+    background-color: #e67e22;
+}
+
+/* Estilos para o input de edição */
+.task-item.editing .task-text {
+    display: none; /* Esconde o texto quando em modo de edição */
+}
+
+.edit-task-input {
+    flex-grow: 1;
+    padding: 8px 10px;
+    border: 1px solid #77aaff; /* Borda similar ao foco do input principal */
+    border-radius: 5px;
+    font-size: 1em;
+    margin-right: 8px; /* Espaço entre o input e os botões */
+    box-shadow: 0 0 3px rgba(119, 170, 255, 0.3); /* Sombra suave */
+}
